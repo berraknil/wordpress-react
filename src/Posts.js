@@ -15,8 +15,13 @@ class Posts extends Component {
           <ul>
             {this.state.posts.map(post => (
               <li key={post.id}>
-              <h2>{post.title.rendered}</h2>
-              <p>{post.content.rendered}</p>
+              <h2 dangerouslySetInnerHTML={{  
+                __html: post.title.rendered 
+              }}/>
+               <h4>{post.author}</h4>
+              <p dangerouslySetInnerHTML={{ 
+                __html: post.content.rendered 
+              }} />
               </li>
             ))}
           </ul>
